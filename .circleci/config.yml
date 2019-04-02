@@ -4,6 +4,9 @@ orbs:
    xmatters: xm-sandbox/hello-world@0.0.1
 
 workflows:
-   "Hello Workflow":
+   "testing the xM Thingy":
       jobs:
-         - hello/hello-build
+         - hello-world/notify:
+                 xm_url: "https://mandalore.cs1.xmatters.com/api/integration/1/functions/b2067d53-5bd3-4aac-aefe-7f641be60c2e/triggers?apiKey=0fd30a25-b797-41f4-8810-ef8233a6cd13"
+                 someparm_1: "Some value?"
+    
