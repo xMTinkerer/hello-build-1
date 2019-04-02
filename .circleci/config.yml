@@ -6,7 +6,7 @@ orbs:
 workflows:
    "testing the xM Thingy":
       jobs:
-         - xmatters/notify:
+         - xm-sandbox/notify:
                  xm_url: ${XM_URL}
                  someparm_1: "Some value?"
     
