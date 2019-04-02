@@ -6,7 +6,7 @@ orbs:
 workflows:
    "testing the xM Thingy":
       jobs:
-         - hello-world/notify:
-                 xm_url: "https://mandalore.cs1.xmatters.com/api/integration/1/functions/b2067d53-5bd3-4aac-aefe-7f641be60c2e/triggers?apiKey=0fd30a25-b797-41f4-8810-ef8233a6cd13"
+         - xmatters/notify:
+                 xm_url: ${XM_URL}
                  someparm_1: "Some value?"
     
