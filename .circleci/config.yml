@@ -3,9 +3,9 @@ version: 2.1
 orbs:
    xmatters: xm-sandbox/hello-world@0.0.1
 
-workflows:
+jobs:
    "testing the xM Thingy":
-      jobs:
+      steps:
          - hello-world/notify:
                  xm_url: ${XM_URL}
                  someparm_1: "Some value?"
