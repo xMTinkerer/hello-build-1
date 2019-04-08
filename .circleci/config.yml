@@ -5,8 +5,13 @@ orbs:
 
 jobs:
    build:
+      docker: 
+         - image: circleci/node:4.8.2
       steps:
+         - run:
+            name: Check current version of node
+            command: node -v
          - xmatters/notify:
-                 xm_url: ${XM_URL}
-                 someparm_1: "Some value?"
+            xm_url: ${XM_URL}
+            someparm_1: "Some value?"
     
