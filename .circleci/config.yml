@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-   xmatters: xm-sandbox/hello-world@0.0.1
+   xmatters: xm-sandbox/xmatters-orb@0.0.1
 
 jobs:
    build:
@@ -14,4 +14,5 @@ jobs:
          - xmatters/notify:
             xm_url: ${XM_URL}
             someparm_1: "Some value?"
-    
+            author: "Jo mama"
+            project: "that one project"
