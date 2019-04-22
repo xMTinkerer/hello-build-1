@@ -13,6 +13,5 @@ jobs:
             command: node -v
          - xmatters/notify:
             xm_url: ${XM_URL}
-            someparm_1: "Some value?"
             author: "Jo mama"
             project: "that one project"
