@@ -13,15 +13,15 @@ jobs:
             command: |
                     echo $XM_URL
          - xmatters/notify_raw:
-            json_payload: '{"properties": { 
-                  "author":     "'${CIRCLE_PROJECT_USERNAME}'",
-                  "project":    "'$CIRCLE_PROJECT_REPONAME'",
-                  "branch":     "'${CIRCLE_BRANCH}'",
-                  "commit":     "'${CIRCLE_SHA1}'",
-                  "build":      "'${CIRCLE_BUILD_NUM}'",
-                  "build_url":  "'${CIRCLE_BUILD_URL}'",
-                  "job":        "'${CIRCLE_JOB}'",
-                  "job_status": "'${XM_BUILD_STATUS}'"
-               },
-               "recipients": [{"id": "tdepuy"}]
-               }'
+            json_payload: "{\"properties\": { \
+                  \"author\":     \"'${CIRCLE_PROJECT_USERNAME}'\",\
+                  \"project\":    \"'$CIRCLE_PROJECT_REPONAME'\",\
+                  \"branch\":     \"'${CIRCLE_BRANCH}'\",\
+                  \"commit\":     \"'${CIRCLE_SHA1}'\",\
+                  \"build\":      \"'${CIRCLE_BUILD_NUM}'\",\
+                  \"build_url\":  \"'${CIRCLE_BUILD_URL}'\",\
+                  \"job\":        \"'${CIRCLE_JOB}'\",\
+                  \"job_status\": \"'${XM_BUILD_STATUS}'\"\
+               },\
+               \"recipients\": [{\"id\": \"tdepuy\"}]\
+               }"
