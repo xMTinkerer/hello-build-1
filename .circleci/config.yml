@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-   xmatters: xm-sandbox/xmatters-orb@0.0.7
+   xmatters: xm-sandbox/xmatters-orb@0.0.9
 
 jobs:
    build:
@@ -9,13 +9,19 @@ jobs:
          - image: circleci/node:4.8.2
       steps:
          - run:
-            name: Check current version of node
-            command: node -v
-         - run:
             name: env?
             command: |
                     echo $XM_URL
-                    env
-         - xmatters/notify:
-            author: "Jo mama"
-            project: "that one project"
+         - xmatters/notify_raw:
+            json_payload: '{"properties": { 
+                  "author":     "'${CIRCLE_PROJECT_USERNAME}'",
+                  "project":    "'$CIRCLE_PROJECT_REPONAME'",
+                  "branch":     "'${CIRCLE_BRANCH}'",
+                  "commit":     "'${CIRCLE_SHA1}'",
+                  "build":      "'${CIRCLE_BUILD_NUM}'",
+                  "build_url":  "'${CIRCLE_BUILD_URL}'",
+                  "job":        "'${CIRCLE_JOB}'",
+                  "job_status": "'${XM_BUILD_STATUS}'"
+               },
+               "recipients": [{"id": "tdepuy"}]
+               }'
