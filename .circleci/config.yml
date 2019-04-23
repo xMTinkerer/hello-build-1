@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-   xmatters: xm-sandbox/xmatters-orb@0.0.6
+   xmatters: xm-sandbox/xmatters-orb@0.0.7
 
 jobs:
    build:
