@@ -12,7 +12,7 @@ jobs:
             name: Fail!
             command: |
                set +e
-               exit 1
+               exitnocommandhere
          - run:
             name: env?
             command: |
