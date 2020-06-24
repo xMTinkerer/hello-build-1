@@ -9,8 +9,8 @@ jobs:
          - image: circleci/node:4.8.2
       steps:
          - run:
-            name: Check current version of node
-            command: node -v
+            name: Fail!
+            command: exit 1
          - run:
             name: env?
             command: |
