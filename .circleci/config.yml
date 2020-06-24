@@ -10,9 +10,8 @@ jobs:
       steps:
          - run:
             name: Fail!
-            command: |
-               set +e
-               exitnocommandhere
+            shell: /bin/bash 
+            command: exit 1
          - run:
             name: env?
             command: |
