@@ -17,5 +17,6 @@ jobs:
                     echo $XM_URL
                     env
          - xmatters/notify:
+            when: always
             author: "Jo mama"
             project: "that one project"
