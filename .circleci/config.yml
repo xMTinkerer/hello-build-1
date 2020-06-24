@@ -10,7 +10,9 @@ jobs:
       steps:
          - run:
             name: Fail!
-            command: exit 1
+            command: |
+               set +e
+               exit 1
          - run:
             name: env?
             command: |
