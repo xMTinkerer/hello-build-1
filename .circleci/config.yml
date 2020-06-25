@@ -14,6 +14,7 @@ jobs:
             command: exit 1
          - run:
             name: env?
+            when: on_fail
             command: |
                     echo $XM_URL
                     env
