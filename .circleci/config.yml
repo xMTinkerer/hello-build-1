@@ -18,8 +18,7 @@ jobs:
          - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
          - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
          - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
-         
-
          - xmatters/notify:
             author: "Jo mama"
             project: "that one project"
+         - run: echo "Fin"
