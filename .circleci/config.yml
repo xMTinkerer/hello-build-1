@@ -14,6 +14,13 @@ jobs:
             command: |
                     echo $XM_URL
                     env
+         - run: echo "This is pipeline ID << pipeline.id >>"
+         - run: echo "This is pipeline.git.revision << pipeline.git.revision >>"
+         - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
+         - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
+         - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
+         
+
          - xmatters/notify:
             author: "Jo mama"
             project: "that one project"
