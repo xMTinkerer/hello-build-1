@@ -9,10 +9,6 @@ jobs:
          - image: circleci/node:4.8.2
       steps:
          - run:
-            name: Fail!
-            shell: /bin/bash 
-            command: exit 1
-         - run:
             name: env?
             when: on_fail
             command: |
