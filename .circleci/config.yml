@@ -4,7 +4,7 @@ orbs:
    xmatters: xmatters/xmatters-orb@1.0.2
 
 jobs:
-   - build:
+   build:
       docker: 
          - image: circleci/node:4.8.2
       steps:
@@ -22,9 +22,9 @@ jobs:
             author: "Jo mama"
             project: "that one project"
          - run: echo "Fin"
-   - request-approval:
+   request-approval:
       type: approval
       requires: build
-   - deploy-stuff:
+   deploy-stuff:
       requires: request-approval
-      
+
