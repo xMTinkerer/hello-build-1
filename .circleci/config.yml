@@ -24,6 +24,7 @@ jobs:
          - run: echo "Fin"
 
    deploy-stuff:
+      name: "deploy stuff"
       docker:
          - image: circleci/node:4.8.2
       steps:
@@ -31,7 +32,6 @@ jobs:
 
 workflows:
    version: 2.1
-
    build-test-and-approval-deploy:
      jobs:
         - build
