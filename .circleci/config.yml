@@ -22,3 +22,10 @@ jobs:
             author: "Jo mama"
             project: "that one project"
          - run: echo "Fin"
+   hold:
+      type: approval
+      requires:
+        - build
+   deploy:
+     requires:
+       - hold
