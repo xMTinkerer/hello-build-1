@@ -45,7 +45,7 @@ workflows:
             - request-approval
       - deploy-stuff:
           requires:
-            - request-approval
+            - hold
 
 
 
