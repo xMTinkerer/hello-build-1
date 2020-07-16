@@ -8,10 +8,6 @@ jobs:
     docker: 
       - image: circleci/node:4.8.2
     steps:
-      - run:
-        name: env?
-        when: on_fail
-        command: echo $XM_URL
       - run: echo "This is pipeline ID << pipeline.id >>"
       - run: echo "This is pipeline.git.revision << pipeline.git.revision >>"
       - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
