@@ -41,8 +41,9 @@ jobs:
 #         requires: 
 #           - request-approval
 
+
 workflows:
-  build_and_test:
+  build-test-and-approval-deploy:
     jobs:
       - build
       - hold:
@@ -52,3 +53,17 @@ workflows:
       - deploy:
           requires:
             - hold
+
+            
+
+# workflows:
+#   build_and_test:
+#     jobs:
+#       - build
+#       - hold:
+#           type: approval
+#           requires:
+#             - build
+#       - deploy:
+#           requires:
+#             - hold
