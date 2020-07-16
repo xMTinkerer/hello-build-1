@@ -13,9 +13,9 @@ jobs:
       - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
       - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
       - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
-      # - xmatters/notify:
-      #   author: "Jo mama"
-      #   project: "that one project"
+      - xmatters/notify:
+        author: "Jo mama"
+        project: "that one project"
       - run: echo "Fin"
   request-approval:
     docker:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - run: echo "this is request-approval"
 
-  deploy:
+  deploy-stuff:
     docker:
       - image: circleci/node:4.8.2
     steps:
@@ -50,11 +50,11 @@ workflows:
           type: approval
           requires:
             - build
-      - deploy:
+      - deploy-stuff:
           requires:
             - request-approval
 
-            
+
 
 # workflows:
 #   build_and_test:
