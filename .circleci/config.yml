@@ -1,44 +1,42 @@
 version: 2.1
 
 orbs:
-   xmatters: xmatters/xmatters-orb@1.0.2
+  xmatters: xmatters/xmatters-orb@1.0.2
 
 jobs:
-   build:
-      docker: 
-         - image: circleci/node:4.8.2
-      steps:
-         - run:
-            name: env?
-            when: on_fail
-            command: |
-                    echo $XM_URL
-         - run: echo "This is pipeline ID << pipeline.id >>"
-         - run: echo "This is pipeline.git.revision << pipeline.git.revision >>"
-         - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
-         - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
-         - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
-         - xmatters/notify:
-            author: "Jo mama"
-            project: "that one project"
-         - run: echo "Fin"
+  build:
+    docker: 
+      - image: circleci/node:4.8.2
+    steps:
+      - run:
+        name: env?
+        when: on_fail
+        command: echo $XM_URL
+      - run: echo "This is pipeline ID << pipeline.id >>"
+      - run: echo "This is pipeline.git.revision << pipeline.git.revision >>"
+      - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
+      - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
+      - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
+      - xmatters/notify:
+        author: "Jo mama"
+        project: "that one project"
+      - run: echo "Fin"
 
-   deploy-stuff:
-      name: "deploy stuff"
-      docker:
-         - image: circleci/node:4.8.2
-      steps:
-         - run: echo "Deploy stuff here"
+  deploy-stuff:
+    name: "deploy stuff"
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - run: echo "Deploy stuff here"
 
 workflows:
-   version: 2.1
-   build-test-and-approval-deploy:
-     jobs:
-        - build
-        - request-approval:
-           type: approval
-           requires: build
-        - deploy-stuff:
-           requires: request-approval
+  build-test-and-approval-deploy:
+    jobs:
+      - build
+      - request-approval:
+        type: approval
+        requires: build
+      - deploy-stuff:
+        requires: request-approval
    
    
