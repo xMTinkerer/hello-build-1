@@ -52,7 +52,7 @@ workflows:
             - build
       - deploy:
           requires:
-            - hold
+            - request-approval
 
             
 
