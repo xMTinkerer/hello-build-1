@@ -17,23 +17,39 @@ jobs:
       #   author: "Jo mama"
       #   project: "that one project"
       - run: echo "Fin"
+  hold:
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - run: echo "this is hold"
 
-  deploy-stuff:
+  deploy:
     docker:
       - image: circleci/node:4.8.2
     steps:
       - run: echo "Deploy stuff here"
 
+# workflows:
+#   build-test-and-approval-deploy:
+#     jobs:
+#       - build
+#       - request-approval:
+#         type: approval
+#         requires: 
+#           - build
+#       - deploy-stuff:
+#         requires: 
+#           - request-approval
+   
 workflows:
-  build-test-and-approval-deploy:
+  build_and_test:
     jobs:
       - build
-      - request-approval:
-        type: approval
-        requires: 
-          - build
-      - deploy-stuff:
-        requires: 
-          - request-approval
-   
-   
+      - hold:
+          type: approval
+          requires:
+            - build
+            - test
+      - deploy:
+          requires:
+            - hold
