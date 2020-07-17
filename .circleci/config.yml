@@ -13,7 +13,9 @@ jobs:
       - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
       - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
       - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
-      - run: echo "workflow ID ${CIRCLE_WORKFLOW_ID}"
+      - run: 
+          name: "WHat is workflow ID"
+          command: echo "workflow ID ${CIRCLE_WORKFLOW_ID}"
 
   request-approval:
     docker:
