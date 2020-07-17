@@ -8,12 +8,7 @@ jobs:
     docker: 
       - image: circleci/node:4.8.2
     steps:
-      - run: echo "This is pipeline ID << pipeline.id >>"
-      - run: echo "This is pipeline.git.revision << pipeline.git.revision >>"
-      - run: echo "This is pipeline.git.base_revision << pipeline.git.base_revision >>"
-      - run: echo "This is pipeline.git.tag << pipeline.git.tag >>"
-      - run: echo "This is pipeline.git.branch << pipeline.git.branch >>"
-      - run: echo "workflow ID ${CIRCLE_WORKFLOW_ID}"
+      - run: echo "Building building building.... do doo dooo"
 
   request-approval:
     docker:
