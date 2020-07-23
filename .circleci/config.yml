@@ -16,11 +16,11 @@ jobs:
     steps:
       - xmatters/notify
 
-  hold:
-    docker:
-      - image: circleci/node:4.8.2
-    steps:
-      - run: echo "Holding for approval"
+  # hold:
+  #   docker:
+  #     - image: circleci/node:4.8.2
+  #   steps:
+  #     - run: echo "Holding for approval"
 
   deploy-stuff:
     docker:
@@ -33,25 +33,9 @@ workflows:
     jobs:
       - build
       - request-approval
-      - hold:
           type: approval
           requires:
             - build
-            - request-approval
       - deploy-stuff:
           requires:
-            - hold
-
-
-
-# workflows:
-#   build_and_test:
-#     jobs:
-#       - build
-#       - hold:
-#           type: approval
-#           requires:
-#             - build
-#       - deploy:
-#           requires:
-#             - hold
+            - request-approval
