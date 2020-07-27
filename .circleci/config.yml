@@ -1,14 +1,14 @@
 version: 2.1
 
 orbs:
-  xmatters: xmatters/xmatters-orb@1.0.3
+  xmatters: xmatters/xmatters-orb@1.0.4
 
 jobs:
   build:
     docker: 
       - image: circleci/node:4.8.2
     steps:
-      - run: echo "Building building building."
+      - run: echo "Building building building!"
 
   request-approval:
     docker:
