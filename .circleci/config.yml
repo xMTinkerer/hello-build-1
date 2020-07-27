@@ -15,7 +15,7 @@ jobs:
       - image: circleci/node:4.8.2
     steps:
       - xmatters/notify:
-        recipients: Engineering Managers
+          recipients: Engineering Managers
 
   hold:
     docker:
