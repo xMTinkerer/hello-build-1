@@ -17,6 +17,12 @@ jobs:
       - xmatters/notify:
         recipients: Engineering Managers
 
+  hold:
+    docker:
+      - image: circleci/node:4.8.2
+    steps:
+      - run: echo "Hold for approval"
+
   deploy-stuff:
     docker:
       - image: circleci/node:4.8.2
@@ -27,10 +33,12 @@ workflows:
   build-test-and-approval-deploy:
     jobs:
       - build
-      - request-approval:
+      - request-approval
+      - hold:
           type: approval
           requires:
             - build
+            - request-approval
       - deploy-stuff:
           requires:
             - request-approval
